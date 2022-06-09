@@ -16,6 +16,14 @@ public class EstadoDAO<TIPO> extends DAOGenerico<Estado> implements Serializable
     public EstadoDAO(){
         super();
         classePersistente = Estado.class;
+        // lista de ordenações possíveis
+        listaOrdem.add(new Ordem("id", "ID", "="));
+        listaOrdem.add(new Ordem("nome", "Nome", "like"));
+        // ordem atual
+        ordemAtual = listaOrdem.get(1);
+        // inicializar o conversor de ordem com a lista de ordens
+        converterOrdem = new ConverterOrdem();
+        converterOrdem.setListaOrdem(listaOrdem);
     }
 
 }
