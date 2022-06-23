@@ -12,7 +12,9 @@ import br.edu.ifsul.modelo.Posicao;
 import br.edu.ifsul.modelo.Time;
 import br.edu.ifsul.modelo.Usuario;
 import br.edu.ifsul.util.Util;
+import br.edu.ifsul.util.UtilRelatorios;
 import java.io.Serializable;
+import java.util.HashMap;
 import javax.ejb.EJB;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
@@ -44,6 +46,11 @@ public class ControleTime implements Serializable {
 
     public ControleTime() {
 
+    }
+    
+    public void imprimirTimes(){
+        HashMap parametros = new HashMap();
+        UtilRelatorios.imprimeRelatorio("dadosTimes", parametros, dao.getListaTodos());
     }
 
     public void novoJogador() {
