@@ -82,6 +82,7 @@
                                 process="@this"
                                 title="Remover o objeto de id: #{obj.id}"
               onclick="if (!confirm('Deseja remover o objeto de id: #{obj.id}')) return false"
+              rendered="#{p:ifGranted('ADMINISTRADOR')}"
                                 />
                         </div>
                     </p:column>
