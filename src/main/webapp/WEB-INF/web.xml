@@ -89,4 +89,8 @@
         <description>Usuario</description>
         <role-name>USUARIO</role-name>
     </security-role>    
+    <error-page>
+         <error-code>403</error-code>
+         <location>/negado.xhtml</location>
+</error-page>
 </web-app>
